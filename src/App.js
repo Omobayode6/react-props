@@ -1,34 +1,23 @@
 import React from 'react';
 import './App.css';
-import ProfileList from './components/profile/ProfileList';
+import Profile from "./components/profile/Profile"
 
 
 function App() {
-
-  const usersProfile = [
-    {
-      fullName: `Omobayode Festus`,
-      profession: `Web Developer`,
-      bio: 'A web developer wit a very strong visual perception of design, ❤ simplicity, and white spaces.',
-      
-    },
-    {
-      fullName: `John Brown`,
-      profession: `UI/UX`,
-      bio: 'A Ui/UX that takes delight in web accessibility and users.',
-    },
-    {
-      fullName: `Temitayo Solomon`,
-      profession: `Data Analyst`,
-      bio: 'A data analyst who loves easearch and interpretation of datas to solve problem.',
-    },
-  ]
-
+   
+  const handleName = (name) => {
+     alert(`The profile user is ${name}`)
+  }
 
 
   return (
     <div className="App">
-     <ProfileList usersProfile = {usersProfile} />
+      <img src= {require('./components/assests/user_profile.png')} alt="Omobayode" />
+      <Profile fullName = {"Omobayode Festus"}  
+      bio = {"A web developer wit a very strong visual perception of design, ❤ simplicity, and white spaces"}
+      Profession = {"Web Developer"}
+      handleName = {handleName}
+      />
     </div>
   );
 }

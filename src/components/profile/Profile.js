@@ -1,22 +1,35 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
-const handleName = (profileName) => alert(`The profile name is ${profileName}`);
+const Profile = (props) => {
 
-
-
-const Profile = ({user, handleName})=>{
-  return(
+  //destructuring props
+  const {fullName, bio, Profession, handleName} = props
+  
+  return (
     <div className="user">
-      <img src= {require('../assests/user_profile.png')} alt={user.fullName} style= {{width: "100px"}} />
-      <h2 onClick={() => handleName(user.fullName) }>{user.fullName}
-      </h2>
-      <h4>{user.profession}</h4>
-      <p>{user.bio}</p> 
+      <h2>{fullName}</h2>
+      <h4>{Profession}</h4>
+      <p>{bio}</p>
+      <button onClick={() => handleName(fullName)}>Click Me</button>
+      {/* <div>{props.children}</div> */}
     </div>
   )
 }
 
+PropTypes.Profile = {
+    fullName: PropTypes.string,
+    Profession: PropTypes.string,
+    bio: PropTypes.string, 
+}
 
-export  default Profile;
-export {handleName};
+Profile.defaultProps = {
+  fullName: "John Brown",
+  Profession: "UI/UX",
+  bio: "A Ui/UX that takes delight in web accessibility and users." 
+  }
+
+
+
+export default Profile

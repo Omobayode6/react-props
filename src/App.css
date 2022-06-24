@@ -1,14 +1,24 @@
 .App {
   width: 30%;
+  height: 650px;
   text-align: center;
   margin: 0 auto;
 }
 
-.user{
-  margin: 50px 0;
-
+.App img{
+  width: 150px;
+  margin: 50px 0 0;
+  padding: 0px;
 }
 
 .user h2, h4{
-  margin: 10px;
+  margin: 8px;
+}
+
+.user button {
+  background-color: #eea439;
+  color: white;
+  padding: 10PX 30px;
+  border: none;
+  border-radius: 25px;
 }
